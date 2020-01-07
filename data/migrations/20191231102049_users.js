@@ -2,7 +2,6 @@
 exports.up = function(knex) {
     return knex.schema.createTable('customers', tbl => {
       tbl.increments();
-      tbl.datetime('created_at');
       tbl.string('first_name', 128).notNullable();
       tbl.string('last_name', 128).notNullable();
       tbl.string('email', 128).unique().notNullable();
