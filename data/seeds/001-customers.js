@@ -9,7 +9,6 @@ exports.seed = function(knex) {
       return knex('customers').insert([
         {
           id: 1,
-          created_at: Date.now(),
           first_name: faker.name.firstName(),
           last_name: faker.name.lastName(),
           email: faker.internet.email(),
@@ -17,7 +16,6 @@ exports.seed = function(knex) {
         },
         {
           id: 2,
-          created_at: Date.now(),
           first_name: faker.name.firstName(),
           last_name: faker.name.lastName(),
           email: faker.internet.email(),
