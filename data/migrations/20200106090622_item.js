@@ -11,7 +11,6 @@ exports.up = function(knex) {
     tbl.float('price').notNullable();
     tbl.string('description').notNullable();
     tbl.text('specs');
-    tbl.blob('image');
   })
 };
 
