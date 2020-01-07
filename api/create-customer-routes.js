@@ -16,10 +16,9 @@ router.post('/new-customer', async (req, res) => {
 
         try {
             const id = await customers.addCustomer(user)
-            const token = await getToken(id);
             res.status(201).json({
                 message: 'User was successfully created',
-                token
+                id
             });
 
         } catch (error) {

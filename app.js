@@ -18,9 +18,9 @@ app.get('/', (req, res) => {
 
 app.use('/api', auth.authenticateUser);
 app.use('/register', createCustomerRoute);
-app.use('/login', loginRoute)
+app.use('/login', loginRoute);
+app.use('/items', itemsRoute);
 app.use('/api/customers', customerRoutes);
-app.use('/items', itemsRoute)
 app.use('/api/cart', cartRoute);
 
 module.exports = app;
