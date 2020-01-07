@@ -9,8 +9,8 @@ exports.up = function(knex) {
       .onUpdate('CASCADE');
     tbl.string('name').notNullable();
     tbl.float('price').notNullable();
-    tbl.text('description', [longtext]).notNullable();
-    tbl.text('specs', [longtext]);
+    tbl.text('description').notNullable();
+    tbl.text('specs');
   })
 };
 
