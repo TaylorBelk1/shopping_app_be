@@ -3,6 +3,7 @@ const app = express();
 const cors = require('cors');
 
 app.use(express.json(), cors());
+app.options('*', cors());
 
 const customerRoutes = require('./api/customer-routes');
 const createCustomerRoute = require('./api/create-customer-routes');
