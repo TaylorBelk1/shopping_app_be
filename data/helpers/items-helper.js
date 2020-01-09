@@ -2,6 +2,7 @@ const db = require('../dbConfig');
 
 module.exports = {
     getAllItems,
+    getAllItemCategories,
     addItem,
     updateItem,
     deleteItem,
@@ -9,8 +10,14 @@ module.exports = {
     getItemById
 }
 
-function getAllItems() {
-    return db('item')
+async function getAllItems() {
+    const items = await db('item')
+        .join('images', 'images.item_id', 'item.id')
+    return items
+}
+
+function getAllItemCategories() {
+    return db('categories')
 }
 
 function getAllItemsInACategory(id) {

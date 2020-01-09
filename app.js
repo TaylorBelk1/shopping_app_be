@@ -1,9 +1,10 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
+// const {AppServerModuleNgFactory, LAZY_MODULE_MAP} = require('./dist/server/main');
+
 
 app.use(express.json(), cors());
-app.options('*', cors());
 
 const customerRoutes = require('./api/customer-routes');
 const createCustomerRoute = require('./api/create-customer-routes');
@@ -17,6 +18,8 @@ app.get('/', (req, res) => {
     res.status(200).json('Application is running...')
 })
 
+
+app.use('/images', express.static('images'));
 app.use('/api', auth.authenticateUser);
 app.use('/register', createCustomerRoute);
 app.use('/login', loginRoute);

@@ -6,7 +6,8 @@ const messages = require('./constants');
 router.get('/', async (req, res) => {
     try {
         const item = await items.getAllItems();
-        item ? res.status(200).json(item)
+        const categories = await items.getAllItemCategories();
+        item ? res.status(200).json({item, categories})
             : res.status(404).json({ message: messages.noItemsFound })
     } catch (error) {
         res.status(500).json(error)
